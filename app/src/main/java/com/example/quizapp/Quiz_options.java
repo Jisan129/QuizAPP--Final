@@ -44,6 +44,7 @@ public class Quiz_options extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 uploadData();
+                finish();
             }
         });
 
