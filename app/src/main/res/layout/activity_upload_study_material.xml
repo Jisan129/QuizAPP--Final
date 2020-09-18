@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UploadStudyMaterial">
+
+
+    <EditText
+        android:id="@+id/UploadMaterial"
+        android:layout_width="207dp"
+        android:layout_height="42dp"
+        android:background="@drawable/edit_text_border2"
+        android:ems="10"
+        android:fontFamily="@font/advent_pro_light"
+        android:inputType="textWebEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UpStudyMaterialText"
+        app:layout_constraintVertical_bias="0.06" />
+
+    <TextView
+        android:id="@+id/UpStudyMaterialText"
+        android:layout_width="365dp"
+        android:layout_height="102dp"
+        android:fontFamily="@font/advent_pro_light"
+        android:text="@string/upload_your_own_study_material"
+        android:textColor="#2699FB"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.76"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.163" />
+
+    <Button
+        android:id="@+id/upload"
+        android:layout_width="102dp"
+        android:layout_height="44dp"
+        android:background="#317F39"
+        android:fontFamily="@font/advent_pro_light"
+        android:text="@string/upload"
+        android:textColor="#FDFDFD"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toEndOf="@+id/UploadMaterial"
+        app:layout_constraintTop_toBottomOf="@+id/UpStudyMaterialText"
+        app:layout_constraintVertical_bias="0.059" />
+
+    <Button
+        android:id="@+id/goBackbtn"
+        android:layout_width="341dp"
+        android:layout_height="77dp"
+        android:background="#FB2626"
+        android:fontFamily="@font/advent_pro_light"
+        android:text="@string/go_back"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.847" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

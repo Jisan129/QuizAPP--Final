@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="12dp"
+    android:padding="8dp"
+    app:cardCornerRadius="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    >
+    <TextView
+        android:id="@+id/question_textVIew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/question_1"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp" />
+
+
+</androidx.cardview.widget.CardView>
+
+        <RadioGroup
+            android:id="@+id/optionGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@color/colorPrimary"
+            android:padding="16dp">
+
+            <RadioButton
+                android:id="@+id/optionA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option A"
+                android:textColor="@color/white"
+
+                />
+
+            <RadioButton
+                android:id="@+id/optionB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option B"
+                android:textColor="@color/white"
+
+                />
+
+            <RadioButton
+                android:id="@+id/optionC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option C"
+                android:textColor="@color/white"
+
+                />
+
+            <RadioButton
+                android:id="@+id/optionD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Option D"
+                android:textColor="@color/white"
+
+                />
+
+        </RadioGroup>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

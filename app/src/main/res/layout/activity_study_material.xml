@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#004E4040"
+    tools:context=".StudyMaterial">
+
+    <Button
+        android:id="@+id/StudyMaterialBack"
+        android:layout_width="350dp"
+        android:layout_height="54dp"
+        android:background="#FB2626"
+        android:fontFamily="@font/advent_pro_light"
+        android:text="Go back"
+        android:textColor="#F7F3F3"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/material_4"
+        app:layout_constraintVertical_bias="0.67" />
+
+    <Button
+        android:id="@+id/material_4"
+        android:layout_width="310dp"
+        android:layout_height="69dp"
+        android:background="#A1A4BB"
+        android:fontFamily="@font/advent_pro_light"
+        android:text="Study Material 4"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StudyMaterialChap"
+        app:layout_constraintVertical_bias="0.582" />
+
+    <Button
+        android:id="@+id/material_3"
+        android:layout_width="310dp"
+        android:layout_height="69dp"
+        android:background="#D6D09A"
+        android:fontFamily="@font/advent_pro_light"
+        android:text="Study Material 3"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StudyMaterialChap"
+        app:layout_constraintVertical_bias="0.401" />
+
+    <TextView
+        android:id="@+id/StudyMaterialSec"
+        android:layout_width="310dp"
+        android:layout_height="47dp"
+        android:fontFamily="@font/advent_pro_light"
+        android:text="Study Material Section"
+        android:textColor="#2699FB"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.653"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051" />
+
+    <TextView
+        android:id="@+id/StudyMaterialSub"
+        android:layout_width="281dp"
+        android:layout_height="33dp"
+        android:fontFamily="@font/advent_pro_light"
+        android:text="Subject: Subject Name"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StudyMaterialSec"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/StudyMaterialChap"
+        android:layout_width="281dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="444dp"
+        android:fontFamily="@font/advent_pro_light"
+        android:text="@string/chapter_chapter_name"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StudyMaterialSub"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/material_1"
+        android:layout_width="310dp"
+        android:layout_height="69dp"
+        android:background="#B3BBC4"
+        android:fontFamily="@font/advent_pro_light"
+        android:text="@string/study_material_1"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StudyMaterialChap"
+        app:layout_constraintVertical_bias="0.041" />
+
+    <Button
+        android:id="@+id/material_2"
+        android:layout_width="310dp"
+        android:layout_height="69dp"
+        android:background="#7E8286"
+        android:fontFamily="@font/advent_pro_light"
+        android:text="@string/study_material_2"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/material_1"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <Button
+        android:id="@+id/Share_btn"
+        android:layout_width="347dp"
+        android:layout_height="68dp"
+        android:background="#225523"
+        android:fontFamily="@font/advent_pro_light"
+        android:text="Share Your Own Material"
+        android:textColor="#F7F3F3"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/material_4"
+        app:layout_constraintVertical_bias="0.187" />
+</androidx.constraintlayout.widget.ConstraintLayout>

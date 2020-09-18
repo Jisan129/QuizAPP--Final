@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.quizapp">
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MyDialog"></activity>
+        <activity android:name=".UploadStudyMaterial" />
+        <activity android:name=".QuizResult" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".PreviousQuiz" />
+        <activity android:name=".StudyMaterial" />
+        <activity android:name=".QuizConfirmation" />
+        <activity android:name=".QuizOrStudyMaterialSelector" />
+        <activity android:name=".ChapterSelector" />
+        <activity android:name=".Quiz_options">
+
+        </activity>
+        <activity android:name=".SelectClass" />
+        <activity android:name=".SubjectSelector" />
+        <activity android:name=".LogInActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CompletionOfQuiz" />
+        <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

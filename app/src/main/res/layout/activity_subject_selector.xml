@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SubjectSelector">
+
+    <TextView
+        android:id="@+id/SubSelectorWelcome"
+        android:layout_width="117dp"
+        android:layout_height="41dp"
+        android:fontFamily="@font/advent_pro_light"
+        android:gravity="center"
+        android:text="Welcome"
+        android:textColor="#2699FB"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.113" />
+
+    <Button
+        android:id="@+id/SubSelectorLogOut"
+        android:layout_width="139dp"
+        android:layout_height="39dp"
+        android:background="@color/maroon"
+        android:fontFamily="@font/advent_pro_light"
+        android:gravity="center"
+        android:text="Log out"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/CheckPrevQuiz"
+        android:layout_width="139dp"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:fontFamily="@font/advent_pro_light"
+        android:text="Check Previous Quiz Marks"
+        app:layout_constraintBottom_toTopOf="@+id/SubSelectorWelcome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SubSelectorLogOut"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/SelectSubject"
+        android:layout_width="178dp"
+        android:layout_height="33dp"
+        android:text="Select Subject"
+        android:textColor="#2699FB"
+        android:textSize="24sp"
+        android:fontFamily="@font/advent_pro_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.373"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.17" />
+
+    <Button
+        android:id="@+id/SubBangla"
+        android:layout_width="152dp"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:text="Bangla"
+        android:fontFamily="@font/advent_pro_light"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.248" />
+
+    <Button
+        android:id="@+id/SubEnglish"
+        android:layout_width="152dp"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:text="English"
+        android:textColor="@color/white"
+        android:fontFamily="@font/advent_pro_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.345" />
+
+    <Button
+        android:id="@+id/SubMath"
+        android:layout_width="152dp"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:text="Math"
+        android:fontFamily="@font/advent_pro_light"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.443" />
+
+    <Button
+        android:id="@+id/SubPhysics"
+        android:layout_width="152dp"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:text="Physics"
+        android:fontFamily="@font/advent_pro_light"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
+
+    <Button
+        android:id="@+id/SubChemistry"
+        android:layout_width="152dp"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:text="Chemistry"
+        android:fontFamily="@font/advent_pro_light"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.644" />
+
+    <Button
+        android:id="@+id/SubBiology"
+        android:layout_width="152dp"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:text="Biology"
+        android:fontFamily="@font/advent_pro_light"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.743" />
+
+    <Button
+        android:id="@+id/SubICT"
+        android:layout_width="152dp"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:text="ICT"
+        android:fontFamily="@font/advent_pro_light"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.842" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

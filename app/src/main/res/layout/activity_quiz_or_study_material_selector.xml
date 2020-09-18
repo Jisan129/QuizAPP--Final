@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizOrStudyMaterialSelector">
+
+    <TextView
+        android:id="@+id/WhereToProceed"
+        android:layout_width="421dp"
+        android:layout_height="71dp"
+        android:fontFamily="@font/advent_pro_light"
+        android:text="                                                                                    Choose where you want to proceed"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.357" />
+
+    <Button
+        android:id="@+id/GiveQuiz"
+        android:layout_width="359dp"
+        android:layout_height="56dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/advent_pro_light"
+        android:text="@string/give_quiz"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WhereToProceed"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <Button
+        android:id="@+id/ToStudyMaterial"
+        android:layout_width="359dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="212dp"
+        android:background="#434178"
+        android:fontFamily="@font/advent_pro_light"
+        android:text="@string/go_to_study_material_section"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GiveQuiz"
+        app:layout_constraintVertical_bias="0.192" />
+
+    <ImageButton
+        android:id="@+id/backButtonChapters"
+        android:layout_width="36dp"
+        android:layout_height="31dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037"
+        app:srcCompat="@drawable/backarrow" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">QuizAPP</string>
+    <string name="name">Username</string>
+    <string name="password">Password</string>
+    <string name="log_In">Log In</string>
+    <string name="NoId">Do not have any account?</string>
+    <string name="Welcome">Welcome to the Quiz App</string>
+    <string name="login">Log in / Sign Up</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="go_to_study_material_section">Go to Study Material Section</string>
+    <string name="give_quiz">Give Quiz</string>
+    <string name="choose_where_you_want_to_proceed">Choose where you want to proceed</string>
+    <string-array name="Select_Class">
+        <item>Select Class</item>
+        <item>Class 5</item>
+        <item>Class 6</item>
+        <item>Class 7</item>
+        <item>Class 8</item>
+        <item>Class 9</item>
+        <item>Class 10</item>
+        <item>Class 11</item>
+        <item>Class 12</item>
+        <item>Varsity Admission</item>
+    </string-array>
+
+    <string name="proceed_to_quiz">Proceed to Quiz</string>
+    <string name="Option_1">Option 1</string>
+    <string name="option_2">Option 2</string>
+    <string name="option3">Option3</string>
+    <string name="option_4">Option 4</string>
+    <string name="skip_the_question">Skip the Question</string>
+    <string name="finish_quiz">Finish Quiz</string>
+    <string name="submit_quiz">Submit Quiz</string>
+    <string name="question_1">Question 1:Question ?</string>>
+    <string name="Wasiul">Bhai</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="full_name">Full Name</string>
+    <string name="study_material_1">Study Material 1</string>
+    <string name="study_material_2">Study Material 2</string>
+    <string name="chapter_chapter_name">Chapter: Chapter Name</string>
+    <string name="upload_your_own_study_material">Upload Your Own Study Material</string>
+    <string name="upload">Upload</string>
+    <string name="go_back">Go Back</string>
+    <string name="obtained_marks">Obtained Marks:</string>
+    <string name="previous_quizzes">Previous Quizzes</string>
+    <string name="subject_name">Subject Name</string>
+    <string name="chapter_name">Chapter Name</string>
+    <string name="time">Time</string>
+    <string name="date">Date</string>
+    <string name="proceed_to_evaluation">Proceed to Evaluation</string>
+    <string name="congratulations">Congratulations</string>
+    <string name="you_have_completed_the_quiz">You have completed the quiz</string>
+
+    <string-array name="city_names">
+        <item>Dhaka</item>
+        <item>Chittagong</item>
+        <item>Sylhet</item>
+        <item>Rajhshahi</item>
+        <item>Khulna</item>
+        <item>Rangpur</item>
+        <item>Mymensingh</item>
+        <item>Barisal</item>
+
+
+    </string-array>
+</resources>
