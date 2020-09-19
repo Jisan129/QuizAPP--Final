@@ -32,15 +32,15 @@ public class Quiz_options extends AppCompatActivity {
     CircularView circularViewWithTimer;
     TextView textView;
     Button submit, skip;
-    ArrayList<Question> questions = new ArrayList<>();
-    String[] option1;
-     String[] option2;
-    String[] option3;
-    String[] option4;
-    String[] rightOption;
-    String[] question;
-    String[] answers;
-    int count = 0;
+    public static ArrayList<Question> questions = new ArrayList<>();
+    public static String[] option1;
+    public static String[] option2;
+    public static String[] option3;
+    public static String[] option4;
+    public static String[] rightOption;
+    public static String[] question;
+    public static String[] answers;
+    public static int count = 0;
 
     DatabaseReference QuizTable;
 
@@ -55,6 +55,41 @@ public class Quiz_options extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_options);
+
+        QuizTable = FirebaseDatabase.getInstance().getReference("Quiz");
+        QuizTable.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    count = (int) snapshot.getChildrenCount();
+                    question = new String[count];
+                    option1 = new String[count];
+                    option2 = new String[count];
+                    option3 = new String[count];
+                    option4 = new String[count];
+                    rightOption = new String[count];
+                    for (int i = 1; i <= count; i++) {
+                        question[i - 1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
+                        option1[i - 1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
+                        option2[i - 1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
+                        option3[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
+                        option4[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
+                        rightOption[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
+
+                        // questions.add(new Question(question[0], 0, rightOption[0], option1[0], option2[0], option3[0], option4[0]));
+
+                        Toast.makeText(getBaseContext(), question[i - 1], Toast.LENGTH_SHORT).show();
+                        //  questions.add(new Question(question[i - 1], option1[i - 1], option2[i - 1], option3[i - 1], option4[i - 1], rightOption[i - 1]));
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
        /* QuizTable = FirebaseDatabase.getInstance().getReference("Quiz");
         QuizTable.addValueEventListener(new ValueEventListener() {
             @Override
@@ -203,42 +238,9 @@ public class Quiz_options extends AppCompatActivity {
 
     }
 
-    private void addQuestions() {
+    public void addQuestions() {
 
-        QuizTable = FirebaseDatabase.getInstance().getReference("Quiz");
-        QuizTable.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()) {
-                    count = (int) snapshot.getChildrenCount();
-                    question = new String[count];
-                    option1 = new String[count];
-                    option2 = new String[count];
-                    option3 = new String[count];
-                    option4 = new String[count];
-                    rightOption = new String[count];
-                    for (int i = 1; i <= count; i++) {
-                        question[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
-                        option1[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
-                        option2[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
-                        option3[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
-                        option4[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
-                        rightOption[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
 
-                       // questions.add(new Question(question[0], 0, rightOption[0], option1[0], option2[0], option3[0], option4[0]));
-
-                        Toast.makeText(getBaseContext(), question[i - 1], Toast.LENGTH_SHORT).show();
-                      //  questions.add(new Question(question[i - 1], option1[i - 1], option2[i - 1], option3[i - 1], option4[i - 1], rightOption[i - 1]));
-
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
 
        /* for (int i = 0; i < count; i++) {
@@ -252,9 +254,7 @@ public class Quiz_options extends AppCompatActivity {
         questions.add(new Question(" 87+32-(12*6)", 2, "49", "12", "47", "49", "100"));
         questions.add(new Question(" 87+32-(12*3)", 3, "40", "121", "47", "79", "10"));
 //        System.out.println(question[0]+ "1234");
-       // Toast.makeText(this, question[0], Toast.LENGTH_SHORT).show();
-
-
+         Toast.makeText(this, question[1], Toast.LENGTH_SHORT).show();
 
 
     }
