@@ -52,9 +52,7 @@ public class LogInActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
                         else{
-                            Intent intent=new Intent(LogInActivity.this,SelectClass.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(intent);
+
                             Toast toast = Toast.makeText(getApplicationContext(),"Email not registered",Toast.LENGTH_LONG);
                             toast.show();
                         }
