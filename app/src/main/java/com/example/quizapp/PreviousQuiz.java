@@ -1,5 +1,6 @@
 package com.example.quizapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,6 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -24,6 +30,9 @@ public class PreviousQuiz extends AppCompatActivity {
     EditText option3;
     EditText option4;
     EditText rightOption;
+    DatabaseReference QuizTable;
+    int count = 0;
+
     ArrayList<Question> addQuestion = new ArrayList<>();
     CollectionReference collectionReference = FirebaseFirestore.getInstance().collection("Questions");
 
@@ -39,7 +48,20 @@ public class PreviousQuiz extends AppCompatActivity {
         option3 = findViewById(R.id.op3);
         option4 = findViewById(R.id.op4);
         rightOption = findViewById(R.id.rightOp);
+        QuizTable = FirebaseDatabase.getInstance().getReference("Quiz");
+        QuizTable.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    count = (int) snapshot.getChildrenCount();
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         quizSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +71,9 @@ public class PreviousQuiz extends AppCompatActivity {
                 } else if (option1.getText().toString().equals("") && option2.getText().toString().equals("") && option3.getText().toString().equals("") && option4.getText().toString().equals("")) {
                     Toast.makeText(getBaseContext(), "Please insert at least one option", Toast.LENGTH_SHORT).show();
                 }
+
+
+
                 String questionText = question.getText().toString();
                 String rightAnswer = rightOption.getText().toString();
                 String optionOne = option1.getText().toString();
@@ -57,16 +82,22 @@ public class PreviousQuiz extends AppCompatActivity {
                 String optionFour = option4.getText().toString();
 
                 //addQuestion.add(new Question("Abc",10,"23","23","26","25","28"));
-                Map<String, String> map = new HashMap<>();
-                map.put("questionText",questionText);
+              /*  Map<String, String> map = new HashMap<>();*/
+               /* map.put("questionText",questionText);
                 map.put("answer", rightAnswer);
                 map.put("option1",optionOne);
                 map.put("option2",optionTwo);
                 map.put("option3",optionThree);
                 map.put("option4",optionFour);
                 map.put("userAnswer",null);
-                collectionReference.document("4").set(map);
+                collectionReference.document("4").set(map);*/
 
+               QuizTable.child(String.valueOf(count+1)).child("Question").setValue(questionText);
+               QuizTable.child(String.valueOf(count+1)).child("Option 1").setValue(optionOne);
+               QuizTable.child(String.valueOf(count+1)).child("Option 2").setValue(optionTwo);
+               QuizTable.child(String.valueOf(count+1)).child("Option 3").setValue(optionThree);
+               QuizTable.child(String.valueOf(count+1)).child("Option 4").setValue(optionFour);
+               QuizTable.child(String.valueOf(count+1)).child("Right Option").setValue(rightAnswer);
 
                 Toast.makeText(getBaseContext(), "Question added", Toast.LENGTH_SHORT).show();
                 question.getText().clear();
