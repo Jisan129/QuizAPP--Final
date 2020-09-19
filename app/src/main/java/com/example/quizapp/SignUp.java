@@ -46,7 +46,6 @@ public class SignUp extends AppCompatActivity {
         mobile = findViewById(R.id.mobile_number);
         submit = findViewById(R.id.submit);
         mAuth = FirebaseAuth.getInstance();
-        progressBar = findViewById(R.id.progressBarID);
 
         if(mAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -73,8 +72,6 @@ public class SignUp extends AppCompatActivity {
                     Password. setError("Password must be 6 or more characters.");
                     return;
                 }
-
-                progressBar.setVisibility(View.VISIBLE);
 
                 mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override

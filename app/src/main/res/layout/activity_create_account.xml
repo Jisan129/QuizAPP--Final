@@ -6,186 +6,141 @@
     android:layout_height="match_parent"
     tools:context=".CreateAccount">
 
-    <ScrollView
-        android:layout_width="317dp"
-        android:layout_height="720dp"
+    <TextView
+        android:id="@+id/createID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/advent_pro_light"
+        android:gravity="center"
+        android:text="Create an Account"
+        android:textColor="@color/colorPrimary"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/user_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.875"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/user_name"
+        android:layout_width="320dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="44dp"
+        android:ems="10"
+        android:fontFamily="@font/advent_pro_light"
+        android:hint="Full Name"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_editor_absoluteX="8dp"
-        app:layout_editor_absoluteY="8dp">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.237" />
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
+    <EditText
+        android:id="@+id/emailID"
+        android:layout_width="320dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="44dp"
+        android:ems="10"
+        android:fontFamily="@font/advent_pro_light"
+        android:hint="Email"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.303" />
 
-            <TextView
-                android:id="@+id/Select_class"
-                android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:text="@string/create_an_account"
-                android:textAlignment="center"
-                android:textColor="#2699FB"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.098" />
+    <EditText
+        android:id="@+id/passwordID"
+        android:layout_width="320dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="44dp"
+        android:ems="10"
+        android:fontFamily="@font/advent_pro_light"
+        android:hint="@string/password"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.368" />
 
-            <TextView
-                android:id="@+id/FullName"
-                android:layout_width="fill_parent"
-                android:layout_height="33dp"
-                android:text="@string/full_name"
-                android:textColor="#2699FB"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.128"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Select_class"
-                app:layout_constraintVertical_bias="0.056" />
+    <EditText
+        android:id="@+id/dateOfBirthID"
+        android:layout_width="320dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="44dp"
+        android:ems="10"
+        android:fontFamily="@font/advent_pro_light"
+        android:hint="Date of Birth"
+        android:importantForAutofill="no"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.434" />
 
-            <EditText
-                android:id="@+id/passwordID"
-                android:layout_width="match_parent"
-                android:layout_height="71dp"
-                android:ems="10"
-                android:hint="Enter Your Name"
-                android:inputType="textPersonName"
-                android:textColorHint="#2699FB"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.485"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/FullName"
-                app:layout_constraintVertical_bias="0.0" />
+    <EditText
+        android:id="@+id/addressID"
+        android:layout_width="320dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="44dp"
+        android:ems="10"
+        android:fontFamily="@font/advent_pro_light"
+        android:hint="Address"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.492" />
 
-            <TextView
-                android:id="@+id/Email"
-                android:layout_width="76dp"
-                android:layout_height="44dp"
-                android:text="Email"
-                android:textAlignment="gravity"
-                android:textColor="#2699FB"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.101"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/passwordID"
-                app:layout_constraintVertical_bias="0.068" />
+    <EditText
+        android:id="@+id/institution_name"
+        android:layout_width="320dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="44dp"
+        android:ems="10"
+        android:fontFamily="@font/advent_pro_light"
+        android:hint="Institution Name"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.552" />
 
-            <EditText
-                android:id="@+id/dateOfBirthID"
-                android:layout_width="match_parent"
-                android:layout_height="61dp"
-                android:ems="10"
-                android:hint="Enter Your Email"
-                android:inputType="textPersonName"
-                android:textColorHint="#2699FB"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.531"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Email"
-                app:layout_constraintVertical_bias="0.0" />
+    <EditText
+        android:id="@+id/mobile_number"
+        android:layout_width="320dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="44dp"
+        android:ems="10"
+        android:fontFamily="@font/advent_pro_light"
+        android:hint="Mobile Number"
+        android:importantForAutofill="no"
+        android:inputType="phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.611" />
 
-            <EditText
-                android:id="@+id/addressID"
-                android:layout_width="match_parent"
-                android:layout_height="69dp"
-                android:ems="10"
-                android:hint="@string/password"
-                android:inputType="textPassword"
-                android:textColorHighlight="#2699FB"
-                android:textColorHint="#2699FB"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.507"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/dateOfBirthID"
-                app:layout_constraintVertical_bias="0.075" />
-
-            <TextView
-                android:id="@+id/PersonalInfo"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:text="Personal Information"
-                android:textAlignment="center"
-                android:textColor="#2699FB"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.6"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/addressID"
-                app:layout_constraintVertical_bias="0.137" />
-
-            <TextView
-                android:id="@+id/DOB"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:text="Date of Birth"
-                android:textColor="#2699FB"
-                android:textSize="24sp"
-                android:textStyle="normal" />
-
-            <EditText
-                android:id="@+id/Date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Date"
-                android:inputType="date"
-                android:textColorHighlight="#2699FB"
-                android:textColorHint="#2699FB"
-                android:textSize="24sp" />
-
-            <Spinner
-                android:id="@+id/CitySpinner"
-                android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:entries="@array/city_names"
-                android:spinnerMode="dropdown" />
-
-            <Spinner
-                android:id="@+id/spinner3"
-                android:layout_width="match_parent"
-                android:layout_height="47dp" />
-
-            <TextView
-                android:id="@+id/PhoneNumber"
-                android:layout_width="match_parent"
-                android:layout_height="37dp"
-                android:text="Phone Number"
-                android:textColor="#2699FB"
-                android:textSize="24sp" />
-
-            <EditText
-                android:id="@+id/editText8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="phone" />
-
-            <Button
-                android:id="@+id/button17"
-                android:layout_width="match_parent"
-                android:layout_height="37dp"
-                android:background="#2699FB"
-                android:text="Continue"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-    </ScrollView>
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/advent_pro_light"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="Submit"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.711"
+        tools:layout_editor_absoluteX="32dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
