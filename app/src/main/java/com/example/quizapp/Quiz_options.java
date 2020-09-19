@@ -150,9 +150,9 @@ public class Quiz_options extends AppCompatActivity {
     }
 
     private void addQuestions() {
-        questions.add(new Question("Question 1", 0, "A", "A", "B", "C", "D"));
-        questions.add(new Question("Question 2", 1, "A",  "A", "B", "C", "D"));
-        questions.add(new Question("Question 3", 2, "A", "A", "B", "C", "D"));
+        questions.add(new Question("12+(13*5)-54", 0, "23", "23", "18", "17", "26"));
+        questions.add(new Question("(45*4)+(23*2)", 1, "226",  "229", "221", "226", "236"));
+        questions.add(new Question("87+32-(12*6)", 2, "47", "49", "57", "43", "47"));
 
         for (Question question : questions) {
             reference.document(question.getQuestionId() + "").set(question);
