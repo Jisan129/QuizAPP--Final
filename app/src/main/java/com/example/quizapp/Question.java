@@ -9,7 +9,7 @@ public class Question {
     private String option3;
     private String option4;
 
-    public Question() {
+    public Question(String s, String s1, String s2, String s3, String s4, String s5) {
     }
 
     public Question(String questionText, int questionId, String answer, String option1, String option2, String option3, String option4) {

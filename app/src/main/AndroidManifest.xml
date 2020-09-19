@@ -23,17 +23,18 @@
         <activity android:name=".QuizOrStudyMaterialSelector" />
         <activity android:name=".ChapterSelector" />
         <activity android:name=".Quiz_options">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+
 
         <activity android:name=".SelectClass" />
         <activity android:name=".SubjectSelector" />
         <activity android:name=".LogInActivity">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+            </activity>
 
         <activity android:name=".CompletionOfQuiz" />
         <activity android:name=".MainActivity">
