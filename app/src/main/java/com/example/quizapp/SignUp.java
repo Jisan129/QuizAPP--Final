@@ -30,7 +30,7 @@ public class SignUp extends AppCompatActivity {
     Button submit;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
-    CollectionReference reference= FirebaseFirestore.getInstance().collection("Sign Up Info");
+  //  CollectionReference reference= FirebaseFirestore.getInstance().collection("Sign Up Info");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +57,11 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View v) {
                 String email = Email.getText().toString().trim();
                 String password = Password.getText().toString().trim();
-
+                String fullName=Name.getText().toString().trim();
+                String birthDay=dateOfBirth.getText().toString().trim();
+                String address1=address.getText().toString().trim();
+                String institution=institute.getText().toString().trim();
+                String phoneNumber=mobile.getText().toString().trim();
                 if(TextUtils.isEmpty(email)){
                     Email.setError("Email is required.");
                     return;
@@ -77,10 +81,19 @@ public class SignUp extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+
+
                             Toast.makeText(SignUp.this, "User Created", Toast.LENGTH_SHORT).show();
                             Map<String,String> map=new HashMap<>();
                             map.put("Email",email);
-                            reference.document("User: 1").set(map);
+                            map.put("Full Name: ",fullName);
+                            map.put("Password: ",password);
+                            map.put("Date of Birth",birthDay);
+                            map.put("Address",address1);
+                            map.put("Institute",institution);
+                            map.put("Phone Number: ",phoneNumber);
+
+                           // reference.document("User: 1").set(map);
                             startActivity(new Intent(getApplicationContext(), SelectClass.class));
 
 
