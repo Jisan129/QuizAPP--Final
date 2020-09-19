@@ -1,5 +1,6 @@
 package com.example.quizapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,6 +13,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -26,7 +32,17 @@ public class Quiz_options extends AppCompatActivity {
     TextView textView;
     Button submit, skip;
     ArrayList<Question> questions = new ArrayList<>();
-    String[] answers = new String[10];
+    String[] option1;
+    String[] option2;
+    String[] option3;
+    String[] option4;
+    String[] rightOption;
+    String[] question;
+    String[] answers;
+    int count = 0;
+
+    DatabaseReference QuizTable;
+
     FirebaseFirestore firebaseFirestore;
     CollectionReference reference = FirebaseFirestore.getInstance().collection("Questions");
     private RecyclerView queRecycler;
@@ -37,6 +53,36 @@ public class Quiz_options extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_options);
+        QuizTable = FirebaseDatabase.getInstance().getReference("Quiz");
+        QuizTable.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    count = (int) snapshot.getChildrenCount();
+                    question = new String[count];
+                    option1 = new String[count];
+                    option2 = new String[count];
+                    option3 = new String[count];
+                    option4 = new String[count];
+                    rightOption = new String[count];
+                    for(int i=1;i<=count;i++){
+                        question[i-1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
+                        option1[i-1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
+                        option2[i-1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
+                        option3[i-1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
+                        option4[i-1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
+                        rightOption[i-1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
+                        Toast.makeText(getBaseContext(), question[i-1], Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         submit = findViewById(R.id.submit_btn);
         circularViewWithTimer = findViewById(R.id.circular_view);
