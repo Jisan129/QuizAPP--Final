@@ -17,6 +17,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.lang.ref.Reference;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUp extends AppCompatActivity {
     TextView account;
@@ -24,7 +30,7 @@ public class SignUp extends AppCompatActivity {
     Button submit;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
-
+    CollectionReference reference= FirebaseFirestore.getInstance().collection("Sign Up Info");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +81,12 @@ public class SignUp extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(SignUp.this, "User Created", Toast.LENGTH_SHORT).show();
+                            Map<String,String> map=new HashMap<>();
+                            map.put("Email",email);
+                            reference.document("User: 1").set(map);
                             startActivity(new Intent(getApplicationContext(), SelectClass.class));
+
+
                         }
                         else{
                             Toast.makeText(SignUp.this, "Error!" + task.getException().getMessage(),Toast.LENGTH_LONG).show();
