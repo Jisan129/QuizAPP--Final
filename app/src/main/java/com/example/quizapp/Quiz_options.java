@@ -150,7 +150,7 @@ public class Quiz_options extends AppCompatActivity {
     }
 
     private void addQuestions() {
-        questions.add(new Question("Who are You? ", 0, "Student", "Developer", "Sports Man", "Doctor", "Soldier"));
+        questions.add(new Question("Question 1", 0, "A", "A", "B", "C", "D"));
         questions.add(new Question("Question 2", 1, "A",  "A", "B", "C", "D"));
         questions.add(new Question("Question 3", 2, "A", "A", "B", "C", "D"));
 
@@ -164,7 +164,7 @@ public class Quiz_options extends AppCompatActivity {
         CircularView.OptionsBuilder builderWithTimer =
                 new CircularView.OptionsBuilder()
                         .shouldDisplayText(true)
-                        .setCounterInSeconds(25)
+                        .setCounterInSeconds(10)
                         .setCircularViewCallback(new CircularViewCallback() {
                             @Override
                             public void onTimerFinish() {
