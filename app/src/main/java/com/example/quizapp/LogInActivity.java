@@ -70,8 +70,8 @@ public class LogInActivity extends AppCompatActivity {
            @Override
            public void onClick(View view) {
                Toast.makeText(LogInActivity.this, "SignUP Detected", Toast.LENGTH_SHORT).show();
-               Intent intent2 = new Intent(LogInActivity.this,SignUp.class);
-               startActivity(intent2);
+               Intent intentSign = new Intent(LogInActivity.this,SignUp.class);
+               startActivity(intentSign);
            }
        });
 

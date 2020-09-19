@@ -82,8 +82,8 @@ public class SignUp extends AppCompatActivity {
                             map.put("Email",email);
                             reference.document("User: 1").set(map);
                             startActivity(new Intent(getApplicationContext(), SelectClass.class));
-
-
+                            Intent intentNext = new Intent(SignUp.this,SelectClass.class);
+                            startActivity(intentNext);
                         }
                         else{
                             Toast.makeText(SignUp.this, "Error!" + task.getException().getMessage(),Toast.LENGTH_LONG).show();
