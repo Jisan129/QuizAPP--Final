@@ -69,9 +69,9 @@ public class LogInActivity extends AppCompatActivity {
        SignUpButton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               Toast.makeText(LogInActivity.this, "Signup Detected", Toast.LENGTH_SHORT).show();
-               Intent intent2 = new Intent(LogInActivity.this,SignUp.class);
-               startActivity(intent2);
+               Toast.makeText(LogInActivity.this, "SignUP Detected", Toast.LENGTH_SHORT).show();
+               Intent intentSign = new Intent(LogInActivity.this,SignUp.class);
+               startActivity(intentSign);
            }
        });
 
