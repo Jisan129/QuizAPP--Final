@@ -10,13 +10,13 @@ import android.widget.ImageButton;
 
 public class QuizConfirmation extends AppCompatActivity {
     Button quizgo;
-    ImageButton backButton;
+    Button backButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_confirmation);
         quizgo=findViewById(R.id.To_quiz);
-        //backButton=findViewById(R.id.backarrowQuizcompletation);
+        backButton=findViewById(R.id.QuizConfirmGoBack);
         quizgo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,12 +27,13 @@ public class QuizConfirmation extends AppCompatActivity {
             }
         });
 
-   /*     backButton.setOnClickListener(new View.OnClickListener() {
+       backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent =new Intent(QuizConfirmation.this,SelectClass.class);
+               startActivity(intent);
             }
-        });*/
+        });
     }
 
     private void startDialogFragment() {

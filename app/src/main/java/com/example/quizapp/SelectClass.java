@@ -66,7 +66,7 @@ public class SelectClass extends AppCompatActivity implements AdapterView.OnItem
         map.put("Class_key",ClassName);
         reference.document("1").set(map).addOnSuccessListener(s-> Log.i(TAG,"1234"+s));
         Toast.makeText(this, ClassName, Toast.LENGTH_SHORT).show();
-        Intent intent=new Intent(SelectClass.this, SubjectSelector.class);
+        Intent intent=new Intent(SelectClass.this, PreviousQuiz.class);
         startActivity(intent);
     }
 

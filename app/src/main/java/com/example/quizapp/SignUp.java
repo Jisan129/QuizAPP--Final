@@ -30,7 +30,7 @@ public class SignUp extends AppCompatActivity {
     Button submit;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
-  //  CollectionReference reference= FirebaseFirestore.getInstance().collection("Sign Up Info");
+    CollectionReference reference= FirebaseFirestore.getInstance().collection("Sign Up Info");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,15 +85,15 @@ public class SignUp extends AppCompatActivity {
 
                             Toast.makeText(SignUp.this, "User Created", Toast.LENGTH_SHORT).show();
                             Map<String,String> map=new HashMap<>();
-                            map.put("Email",email);
                             map.put("Full Name: ",fullName);
+                            map.put("Email",email);
                             map.put("Password: ",password);
                             map.put("Date of Birth",birthDay);
                             map.put("Address",address1);
                             map.put("Institute",institution);
                             map.put("Phone Number: ",phoneNumber);
 
-                           // reference.document("User: 1").set(map);
+                           reference.document("User: 1").set(map);
                             startActivity(new Intent(getApplicationContext(), SelectClass.class));
                             Intent intentNext = new Intent(SignUp.this,SelectClass.class);
                             startActivity(intentNext);

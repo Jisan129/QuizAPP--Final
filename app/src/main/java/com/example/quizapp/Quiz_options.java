@@ -49,7 +49,7 @@ public class Quiz_options extends AppCompatActivity {
         });
 
         TimerSettings();
-        addQuestions();
+       // addQuestions();
 
         queAdapter = new QueAdapter(questions);
         queRecycler = findViewById(R.id.recycleView);
@@ -150,9 +150,11 @@ public class Quiz_options extends AppCompatActivity {
     }
 
     private void addQuestions() {
-        questions.add(new Question("Question 1", 0, "A", "A", "B", "C", "D"));
-        questions.add(new Question("Question 2", 1, "A",  "A", "B", "C", "D"));
-        questions.add(new Question("Question 3", 2, "A", "A", "B", "C", "D"));
+        questions.add(new Question("12+(13*5)-54?", 0, "23", "23", "18", "26", "17"));
+        questions.add(new Question(" (45* 4)+(23* 2)", 1, "229",  "226", "231", "245", "250"));
+        questions.add(new Question(" 87+32-(12*6)", 2, "49", "12", "47", "49", "100"));
+        questions.add(new Question(" 87+32-(12*3)", 3, "40", "121", "47", "79", "10"));
+
 
         for (Question question : questions) {
             reference.document(question.getQuestionId() + "").set(question);
@@ -173,6 +175,7 @@ public class Quiz_options extends AppCompatActivity {
                                 startActivity(intent);
                                 // Will be called if times up of countdown timer
                                 //Toast.makeText(MainActivity.this, "CircularCallback: Timer Finished ", Toast.LENGTH_SHORT).show();
+
                             }
 
                             @Override
