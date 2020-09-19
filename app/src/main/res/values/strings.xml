@@ -50,6 +50,11 @@
     <string name="proceed_to_evaluation">Proceed to Evaluation</string>
     <string name="congratulations">Congratulations</string>
     <string name="you_have_completed_the_quiz">You have completed the quiz</string>
+    <string name="insert_your_option">Insert Your Option</string>
+    <string name="add_option">Add Option</string>
+    <string name="submit">Submit</string>
+    <string name="reset">Reset</string>
+    <string name="the_correct_option_a_b_c_d">The correct option? A/B/C/D?</string>
 
     <string-array name="city_names">
         <item>Dhaka</item>
