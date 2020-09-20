@@ -30,6 +30,7 @@
         <activity android:name=".ChapterSelector" />
         <activity android:name=".Quiz_options">
 
+
         </activity>
 
 
