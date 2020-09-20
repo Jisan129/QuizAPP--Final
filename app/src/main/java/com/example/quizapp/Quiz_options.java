@@ -60,13 +60,13 @@ public class Quiz_options extends AppCompatActivity {
         setContentView(R.layout.activity_quiz_options);
 
 
-       Intent intent=getIntent();
-       question=intent.getStringArrayExtra("question");
-       rightOption=intent.getStringArrayExtra("right");
-       option1=intent.getStringArrayExtra("option1");
-       option2=intent.getStringArrayExtra("option2");
-       option3=intent.getStringArrayExtra("option3");
-       option4=intent.getStringArrayExtra("option4");
+        Intent intent=getIntent();
+        question=intent.getStringArrayExtra("question");
+        rightOption=intent.getStringArrayExtra("right");
+        option1=intent.getStringArrayExtra("option1");
+        option2=intent.getStringArrayExtra("option2");
+        option3=intent.getStringArrayExtra("option3");
+        option4=intent.getStringArrayExtra("option4");
         Toast.makeText(this, question[0]+" ", Toast.LENGTH_SHORT).show();
 
 /*        QuizTable = FirebaseDatabase.getInstance().getReference("Quiz");
@@ -88,40 +88,21 @@ public class Quiz_options extends AppCompatActivity {
                         option3[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
                         option4[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
                         rightOption[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
-
-
                         // questions.add(new Question(question[0], 0, rightOption[0], option1[0], option2[0], option3[0], option4[0]));
-
-
 //                       Toast.makeText(getBaseContext(), question[i - 1], Toast.LENGTH_SHORT).show();
 //                       questions.add(new Question(question[i - 1],1, option1[i - 1], option2[i - 1], option3[i - 1], option4[i - 1], rightOption[i - 1]));
-
-
                     }
-
                     if(question[0]!=null)
                     {
                         progressDialog.dismiss();
                         call = true;
                         test();
                     }
-
-
-
-
-
                 }
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
-
-
-
-
         });*/
 
 
@@ -135,15 +116,12 @@ public class Quiz_options extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // uploadData();
-
-                for (int i = 0; i < queAdapter.getItemCount(); i++) {
-                    reference.document((i)+"").update("userAnswer",answers[i]);
-                }
+                finish();
             }
         });
 
         TimerSettings();
-           test();
+        test();
 //        addQuestions();
         //questions.add(new Question(question[0].toString(),0,rightOption[0].toString(),option1[0],option2[0],option3[0],option4[0]));
         //questions.add(firebaseFirestore.collection("Q"))
@@ -169,7 +147,6 @@ public class Quiz_options extends AppCompatActivity {
 
 
 
-/*
     private void onClick(View view) {
         String userAnswer = "";
 
@@ -179,22 +156,19 @@ public class Quiz_options extends AppCompatActivity {
         else if (optionD.isChecked()) userAnswer = "D";
 
 
-        }
-*/
-
-       // reference.document(questions.get(0).getQuestionId() + "").update("userAnswer", answers);
+        reference.document(questions.get(0).getQuestionId() + "").update("userAnswer", userAnswer);
 
 
-
+    }
 
     public void addQuestions() {
 
 
 
 
-        for (int i = 0; i <5; i++) {
+        for (int i = 0; i < 2; i++) {
             questions.add(new Question(question[i], i, rightOption[i], option1[i], option2[i], option3[i], option4[i]));
-           // reference.document( i+"").set(question);
+            // reference.document( i+"").set(question);
 
         }
 //       questions.add(new Question(question[0].toString(),0,rightOption[0].toString(),option1[0],option2[0],option3[0],option4[0]));
