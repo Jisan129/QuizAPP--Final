@@ -81,6 +81,9 @@ public class PreviousQuiz extends AppCompatActivity {
                 String optionThree = option3.getText().toString();
                 String optionFour = option4.getText().toString();
 
+                Question que = new Question(questionText,0,rightAnswer,optionOne,optionTwo,optionThree,optionFour);
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                db.collection("Questions").document(""+que.getQuestionId()).set(que);
                 //addQuestion.add(new Question("Abc",10,"23","23","26","25","28"));
               /*  Map<String, String> map = new HashMap<>();*/
                /* map.put("questionText",questionText);

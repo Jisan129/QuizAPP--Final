@@ -135,7 +135,10 @@ public class Quiz_options extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // uploadData();
-                finish();
+
+                for (int i = 0; i < queAdapter.getItemCount(); i++) {
+                    reference.document((i)+"").update("userAnswer",answers[i]);
+                }
             }
         });
 
@@ -166,6 +169,7 @@ public class Quiz_options extends AppCompatActivity {
 
 
 
+/*
     private void onClick(View view) {
         String userAnswer = "";
 
@@ -175,17 +179,20 @@ public class Quiz_options extends AppCompatActivity {
         else if (optionD.isChecked()) userAnswer = "D";
 
 
-        reference.document(questions.get(0).getQuestionId() + "").update("userAnswer", userAnswer);
+        }
+*/
+
+       // reference.document(questions.get(0).getQuestionId() + "").update("userAnswer", answers);
 
 
-    }
+
 
     public void addQuestions() {
 
 
 
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i <5; i++) {
             questions.add(new Question(question[i], i, rightOption[i], option1[i], option2[i], option3[i], option4[i]));
            // reference.document( i+"").set(question);
 

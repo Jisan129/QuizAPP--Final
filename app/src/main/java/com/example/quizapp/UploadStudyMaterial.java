@@ -96,6 +96,11 @@ public class UploadStudyMaterial extends AppCompatActivity {
                         option4[i - 1] = snapshot.child((String.valueOf(i))).child("Option 4").getValue().toString();
                         rightOption[i - 1] = snapshot.child((String.valueOf(i))).child("Right Option").getValue().toString();
 
+
+
+
+
+
                         //Toast.makeText(UploadStudyMaterial.this, question[i]+" "+option1[i], Toast.LENGTH_SHORT).show();
                         // questions.add(new Question(question[0], 0, rightOption[0], option1[0], option2[0], option3[0], option4[0]));
 
@@ -145,6 +150,10 @@ public class UploadStudyMaterial extends AppCompatActivity {
         intent.putExtra("option2",option2);
         intent.putExtra("option3",option3);
         intent.putExtra("option4",option4);
+
+
+
+
         Toast.makeText(this, rightOption[0]+" "+option4[0]+" ", Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
