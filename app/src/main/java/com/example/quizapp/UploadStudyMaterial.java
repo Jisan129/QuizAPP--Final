@@ -90,13 +90,13 @@ public class UploadStudyMaterial extends AppCompatActivity {
                     rightOption = new String[count];
                     for (int i = 1; i <= count; i++) {
                         question[i - 1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
-                        option1[i - 1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
-                        option2[i - 1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
-                        option3[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
-                        option4[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
-                        rightOption[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
+                        option1[i - 1] = snapshot.child((String.valueOf(i))).child("Option 1").getValue().toString();
+                        option2[i - 1] = snapshot.child((String.valueOf(i))).child("Option 2").getValue().toString();
+                        option3[i - 1] = snapshot.child((String.valueOf(i))).child("Option 3").getValue().toString();
+                        option4[i - 1] = snapshot.child((String.valueOf(i))).child("Option 4").getValue().toString();
+                        rightOption[i - 1] = snapshot.child((String.valueOf(i))).child("Right Option").getValue().toString();
 
-                        //Toast.makeText(UploadStudyMaterial.this, question[i], Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(UploadStudyMaterial.this, question[i]+" "+option1[i], Toast.LENGTH_SHORT).show();
                         // questions.add(new Question(question[0], 0, rightOption[0], option1[0], option2[0], option3[0], option4[0]));
 
 
@@ -106,12 +106,14 @@ public class UploadStudyMaterial extends AppCompatActivity {
 
                     }
 
-                    /*if(question[0]!=null)
+                    if(question[0]!=null)
                     {
                         progressDialog.dismiss();
                         call = true;
-                        test();
-                    }*/
+
+                        sendData();
+
+                    }
 
 
 
@@ -132,4 +134,18 @@ public class UploadStudyMaterial extends AppCompatActivity {
         });
 
 
-    }}
+    }
+
+    private void sendData() {
+       // Toast.makeText(UploadStudyMaterial.this, question[0], Toast.LENGTH_SHORT).show();
+        Intent intent=new Intent(UploadStudyMaterial.this,Quiz_options.class);
+        intent.putExtra("question",question);
+        intent.putExtra("right",rightOption);
+        intent.putExtra("option1",option1);
+        intent.putExtra("option2",option2);
+        intent.putExtra("option3",option3);
+        intent.putExtra("option4",option4);
+        Toast.makeText(this, rightOption[0]+" "+option4[0]+" ", Toast.LENGTH_SHORT).show();
+        startActivity(intent);
+    }
+}

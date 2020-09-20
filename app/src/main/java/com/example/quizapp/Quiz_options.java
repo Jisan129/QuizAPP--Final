@@ -58,11 +58,18 @@ public class Quiz_options extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_options);
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Getting data");
-        progressDialog.show();
 
-        QuizTable = FirebaseDatabase.getInstance().getReference("Quiz");
+
+       Intent intent=getIntent();
+       question=intent.getStringArrayExtra("question");
+       rightOption=intent.getStringArrayExtra("right");
+       option1=intent.getStringArrayExtra("option1");
+       option2=intent.getStringArrayExtra("option2");
+       option3=intent.getStringArrayExtra("option3");
+       option4=intent.getStringArrayExtra("option4");
+        Toast.makeText(this, question[0]+" ", Toast.LENGTH_SHORT).show();
+
+/*        QuizTable = FirebaseDatabase.getInstance().getReference("Quiz");
         QuizTable.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -115,7 +122,7 @@ public class Quiz_options extends AppCompatActivity {
 
 
 
-        });
+        });*/
 
 
         submit = findViewById(R.id.submit_btn);
@@ -133,7 +140,7 @@ public class Quiz_options extends AppCompatActivity {
         });
 
         TimerSettings();
-
+           test();
 //        addQuestions();
         //questions.add(new Question(question[0].toString(),0,rightOption[0].toString(),option1[0],option2[0],option3[0],option4[0]));
         //questions.add(firebaseFirestore.collection("Q"))
@@ -178,16 +185,15 @@ public class Quiz_options extends AppCompatActivity {
 
 
 
-       /* for (int i = 0; i < count; i++) {
+        for (int i = 0; i < 2; i++) {
             questions.add(new Question(question[i], i, rightOption[i], option1[i], option2[i], option3[i], option4[i]));
-            reference.document( i+"").set(question);
+           // reference.document( i+"").set(question);
 
-        }*/
-
+        }
 //       questions.add(new Question(question[0].toString(),0,rightOption[0].toString(),option1[0],option2[0],option3[0],option4[0]));
-        questions.add(new Question(" (45* 4)+(23* 2)", 1, "229", "226", "231", "245", "250"));
+        /*questions.add(new Question(" (45* 4)+(23* 2)", 1, "229", "226", "231", "245", "250"));
         questions.add(new Question(" 87+32-(12*6)", 2, "49", "12", "47", "49", "100"));
-        questions.add(new Question(" 87+32-(12*3)", 3, "40", "121", "47", "79", "10"));
+        questions.add(new Question(" 87+32-(12*3)", 3, "40", "121", "47", "79", "10"));*/
 //        System.out.println(question[0]+ "1234");
         Toast.makeText(this, question[1], Toast.LENGTH_SHORT).show();
 
