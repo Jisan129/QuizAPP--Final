@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -28,10 +29,12 @@ import ticker.views.com.ticker.widgets.circular.timer.callbacks.CircularViewCall
 import ticker.views.com.ticker.widgets.circular.timer.view.CircularView;
 
 public class Quiz_options extends AppCompatActivity {
+    ProgressDialog progressDialog;
     RadioButton optionA, optionB, optionC, optionD;
     CircularView circularViewWithTimer;
     TextView textView;
     Button submit, skip;
+    public  static Boolean call = false;
     public static ArrayList<Question> questions = new ArrayList<>();
     public static String[] option1;
     public static String[] option2;
@@ -40,7 +43,7 @@ public class Quiz_options extends AppCompatActivity {
     public static String[] rightOption;
     public static String[] question;
     public static String[] answers;
-    public static int count = 0;
+    public static int count = 100;
 
     DatabaseReference QuizTable;
 
@@ -55,6 +58,9 @@ public class Quiz_options extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_options);
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Getting data");
+        progressDialog.show();
 
         QuizTable = FirebaseDatabase.getInstance().getReference("Quiz");
         QuizTable.addValueEventListener(new ValueEventListener() {
@@ -76,55 +82,42 @@ public class Quiz_options extends AppCompatActivity {
                         option4[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
                         rightOption[i - 1] = Objects.requireNonNull(snapshot.child((String.valueOf(i))).child("Question").getValue()).toString();
 
+
                         // questions.add(new Question(question[0], 0, rightOption[0], option1[0], option2[0], option3[0], option4[0]));
 
-                        Toast.makeText(getBaseContext(), question[i - 1], Toast.LENGTH_SHORT).show();
-                        //  questions.add(new Question(question[i - 1], option1[i - 1], option2[i - 1], option3[i - 1], option4[i - 1], rightOption[i - 1]));
+
+//                       Toast.makeText(getBaseContext(), question[i - 1], Toast.LENGTH_SHORT).show();
+//                       questions.add(new Question(question[i - 1],1, option1[i - 1], option2[i - 1], option3[i - 1], option4[i - 1], rightOption[i - 1]));
+
 
                     }
+
+                    if(question[0]!=null)
+                    {
+                        progressDialog.dismiss();
+                        call = true;
+                        test();
+                    }
+
+
+
+
+
                 }
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
+
+
+
+
         });
-       /* QuizTable = FirebaseDatabase.getInstance().getReference("Quiz");
-        QuizTable.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()) {
-                    count = (int) snapshot.getChildrenCount();
-                    question = new String[count];
-                    option1 = new String[count];
-                    option2 = new String[count];
-                    option3 = new String[count];
-                    option4 = new String[count];
-                    rightOption = new String[count];
-                    for (int i = 1; i <= count; i++) {
-                        question[i - 1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
-                        option1[i - 1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
-                        option2[i - 1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
-                        option3[i - 1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
-                        option4[i - 1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
-                        rightOption[i - 1] = snapshot.child((String.valueOf(i))).child("Question").getValue().toString();
 
-                        questions.add(new Question(question[0], 0, rightOption[0], option1[0], option2[0], option3[0], option4[0]));
 
-                        Toast.makeText(getBaseContext(), question[i - 1], Toast.LENGTH_SHORT).show();
-                        questions.add(new Question(question[i - 1], option1[i - 1], option2[i - 1], option3[i - 1], option4[i - 1], rightOption[i - 1]));
-
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-*/
         submit = findViewById(R.id.submit_btn);
         optionB = findViewById(R.id.optionB);
         optionA = findViewById(R.id.optionA);
@@ -140,7 +133,9 @@ public class Quiz_options extends AppCompatActivity {
         });
 
         TimerSettings();
-        addQuestions();
+
+//        addQuestions();
+        //questions.add(new Question(question[0].toString(),0,rightOption[0].toString(),option1[0],option2[0],option3[0],option4[0]));
         //questions.add(firebaseFirestore.collection("Q"))
         queAdapter = new QueAdapter(questions);
         queRecycler = findViewById(R.id.recycleView);
@@ -154,74 +149,14 @@ public class Quiz_options extends AppCompatActivity {
             }
         });
 
-    /*    questions.add(new Question(1,"A","B","c","D","A"));
-        reference.document(set).set()*/
-
-
-  /*      optionA.setOnClickListener(this::onClick);
-        optionC.setOnClickListener(this::onClick);
-        optionD.setOnClickListener(this::onClick);
-        optionB.setOnClickListener(this::onClick);
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Quiz_options.this, CompletionOfQuiz.class);
-                startActivity(intent);
-
-            }
-        });*/
-
-
-
-
-
-
-       /* r1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatabaseReference databaseReference=database.getReference("Question no: 1");
-                databaseReference.setValue("A");
-            }
-        });
-        r2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatabaseReference databaseReference=database.getReference("Question no: 1");
-                databaseReference.setValue("B");
-            }
-        });
-        r3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatabaseReference databaseReference=database.getReference("Question no: 1");
-                databaseReference.setValue("C");
-            }
-        });
-        r4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatabaseReference databaseReference=database.getReference("Question no: 1");
-                databaseReference.setValue("D");
-            }
-        });*/
     }
 
-   /* private void uploadData() {
-        boolean flag=false;
-        int count=0;
-        for (int i = 0; i < questions.size(); i++) {
-            questions.get(i).setUserAnswer(answers[i]);
-            reference.document(questions.get(i).getQuestionId()+"").set(questions.get(i));
-            flag=questions.get(i).getAnswer().equals(questions.get(i).getUserAnswer());
-            if(flag)count++;
-        }
-        Toast.makeText(this, "Your number of Correct answer is : "+count, Toast.LENGTH_SHORT).show();
+    public void test()
+    {
+        addQuestions();
+        //Toast.makeText(this, question[0], Toast.LENGTH_SHORT).show();
+    }
 
-        Intent intent=new Intent(this,QuizResult.class);
-        intent.putExtra("result",count);
-        startActivity(intent);*/
-
-    // reference.document(questions.get(i).getQuestionId()+"").update("userAnswer",answers[i]);
 
 
     private void onClick(View view) {
@@ -249,12 +184,12 @@ public class Quiz_options extends AppCompatActivity {
 
         }*/
 
-        //questions.add(new Question(question[0].toString(),0,rightOption[0].toString(),option1[0],option2[0],option3[0],option4[0]));
+//       questions.add(new Question(question[0].toString(),0,rightOption[0].toString(),option1[0],option2[0],option3[0],option4[0]));
         questions.add(new Question(" (45* 4)+(23* 2)", 1, "229", "226", "231", "245", "250"));
         questions.add(new Question(" 87+32-(12*6)", 2, "49", "12", "47", "49", "100"));
         questions.add(new Question(" 87+32-(12*3)", 3, "40", "121", "47", "79", "10"));
 //        System.out.println(question[0]+ "1234");
-         Toast.makeText(this, question[1], Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, question[1], Toast.LENGTH_SHORT).show();
 
 
     }
