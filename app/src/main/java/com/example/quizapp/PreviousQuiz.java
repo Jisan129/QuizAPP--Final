@@ -3,6 +3,7 @@ package com.example.quizapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -120,6 +121,8 @@ public class PreviousQuiz extends AppCompatActivity {
                 option2.getText().clear();
                 option3.getText().clear();
                 option4.getText().clear();
+
+                Intent intent =new Intent(PreviousQuiz.this,MainActivity.class);
                 Toast.makeText(getBaseContext(), "Reset Successfully", Toast.LENGTH_SHORT).show();
             }
         });

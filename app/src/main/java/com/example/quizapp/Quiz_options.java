@@ -167,7 +167,7 @@ public class Quiz_options extends AppCompatActivity {
 
     private void onClick(View view) {
         String userAnswer = "";
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < 11; i++) {
             int count=0;
             if (optionA.isChecked()) userAnswer = "A";
             else if (optionB.isChecked()) userAnswer = "B";
@@ -185,7 +185,7 @@ public class Quiz_options extends AppCompatActivity {
 
 
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 10; i++) {
             questions.add(new Question(question[i], i, rightOption[i], option1[i], option2[i], option3[i], option4[i]));
             // reference.document( i+"").set(question);
 
