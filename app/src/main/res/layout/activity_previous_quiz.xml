@@ -124,7 +124,7 @@
         android:layout_height="62dp"
         android:background="#A51919"
         android:fontFamily="@font/archivo_narrow"
-        android:text="@string/reset"
+        android:text="Back"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp"

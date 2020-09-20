@@ -63,8 +63,14 @@ public class QueAdapter extends RecyclerView.Adapter<QueAdapter.QuestionViewHold
                 case R.id.optionD:
                     ans = "D";
                     break;
+
+
             }
-            onOptionClickListener.onClick(position,ans);     //need some interface realizations
+            onOptionClickListener.onClick(position,ans);
+
+
+
+            //need some interface realizations
         }
 
     }

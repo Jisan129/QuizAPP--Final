@@ -34,7 +34,7 @@ public class LogInActivity extends AppCompatActivity {
         SignUpButton=findViewById(R.id.signUpId);
         mAuth = FirebaseAuth.getInstance();
 
-
+        String techer="teacher@email.com";
         Login_button.setOnClickListener(new View.OnClickListener() {
             private void userLogin(){
 
@@ -46,11 +46,16 @@ public class LogInActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            if(email.equals(techer)){
+                                Intent intent =new Intent(LogInActivity.this,PreviousQuiz.class);
+                                startActivity(intent);
+                            }
+                            else{
                             Intent intent=new Intent(LogInActivity.this,SelectClass.class);
                             Toast.makeText(LogInActivity.this, "Successful", Toast.LENGTH_SHORT).show();
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
-                        }
+                        }}
                         else{
 
                             Toast toast = Toast.makeText(getApplicationContext(),"Email not registered",Toast.LENGTH_LONG);

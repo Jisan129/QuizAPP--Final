@@ -44,7 +44,7 @@ public class Quiz_options extends AppCompatActivity {
     public static String[] question;
     public static String[] answers = new String[10];
     public static int count = 100;
-
+    int count2 =0;
     DatabaseReference QuizTable;
 
 
@@ -67,7 +67,7 @@ public class Quiz_options extends AppCompatActivity {
         option2=intent.getStringArrayExtra("option2");
         option3=intent.getStringArrayExtra("option3");
         option4=intent.getStringArrayExtra("option4");
-        Toast.makeText(this, question[0]+" ", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, rightOption[0]+"Right Answer", Toast.LENGTH_SHORT).show();
 
 /*        QuizTable = FirebaseDatabase.getInstance().getReference("Quiz");
         QuizTable.addValueEventListener(new ValueEventListener() {
@@ -116,7 +116,14 @@ public class Quiz_options extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // uploadData();
-                finish();
+
+
+                Intent intent1=new Intent(Quiz_options.this,SelectClass.class);
+                intent.putExtra("result",count2);
+                startActivity(intent);
+                finishActivity(-1);
+
+                //Toast.makeText(Quiz_options.this, count2+"Count: ", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -130,12 +137,23 @@ public class Quiz_options extends AppCompatActivity {
         queRecycler.setAdapter(queAdapter);
 
         queAdapter.setOnOptionClickListener(new QueAdapter.OnOptionClickListener() {
+
             @Override
             public void onClick(int position, String option) {
 
                 answers[position] = option;
+                if(option.equals(questions.get(position).getAnswer())){
+                    count2++;
+                }
             }
+
+
         });
+
+      //  Toast.makeText(this, "Right :"+count2, Toast.LENGTH_SHORT).show();
+
+      // onClick(queRecycler);
+
 
     }
 
@@ -149,15 +167,16 @@ public class Quiz_options extends AppCompatActivity {
 
     private void onClick(View view) {
         String userAnswer = "";
+        for (int i = 1; i < 10; i++) {
+            int count=0;
+            if (optionA.isChecked()) userAnswer = "A";
+            else if (optionB.isChecked()) userAnswer = "B";
+            else if (optionC.isChecked()) userAnswer = "C";
+            else if (optionD.isChecked()) userAnswer = "D";
+        }
 
-        if (optionA.isChecked()) userAnswer = "A";
-        else if (optionB.isChecked()) userAnswer = "B";
-        else if (optionC.isChecked()) userAnswer = "C";
-        else if (optionD.isChecked()) userAnswer = "D";
-
-
-        reference.document(questions.get(0).getQuestionId() + "").update("userAnswer", userAnswer);
-
+       // reference.document(questions.get(0).getQuestionId() + "").update("userAnswer", userAnswer);
+      //  Toast.makeText(this, count+" Number", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -166,7 +185,7 @@ public class Quiz_options extends AppCompatActivity {
 
 
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 5; i++) {
             questions.add(new Question(question[i], i, rightOption[i], option1[i], option2[i], option3[i], option4[i]));
             // reference.document( i+"").set(question);
 
@@ -176,7 +195,7 @@ public class Quiz_options extends AppCompatActivity {
         questions.add(new Question(" 87+32-(12*6)", 2, "49", "12", "47", "49", "100"));
         questions.add(new Question(" 87+32-(12*3)", 3, "40", "121", "47", "79", "10"));*/
 //        System.out.println(question[0]+ "1234");
-        Toast.makeText(this, question[1], Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(this, question[1], Toast.LENGTH_SHORT).show();
 
 
     }
@@ -185,13 +204,14 @@ public class Quiz_options extends AppCompatActivity {
         CircularView.OptionsBuilder builderWithTimer =
                 new CircularView.OptionsBuilder()
                         .shouldDisplayText(true)
-                        .setCounterInSeconds(30)
+                        .setCounterInSeconds(10)
                         .setCircularViewCallback(new CircularViewCallback() {
                             @Override
                             public void onTimerFinish() {
                                 Intent intent = new Intent(Quiz_options.this, QuizResult.class);
-                                // intent.putExtra("result",count);
+                                 intent.putExtra("result",count2);
                                 startActivity(intent);
+                                finishActivity(-1);
                                 // Will be called if times up of countdown timer
                                 //Toast.makeText(MainActivity.this, "CircularCallback: Timer Finished ", Toast.LENGTH_SHORT).show();
 
@@ -199,7 +219,10 @@ public class Quiz_options extends AppCompatActivity {
 
                             @Override
                             public void onTimerCancelled() {
-
+                                Intent intent = new Intent(Quiz_options.this, QuizResult.class);
+                                intent.putExtra("result",count2);
+                                startActivity(intent);
+                                        finishActivity(-1);
                                 // Will be called if stopTimer is called
                                 // Toast.makeText(MainActivity.this, "CircularCallback: Timer Cancelled ", Toast.LENGTH_SHORT).show();
                             }

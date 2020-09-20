@@ -46,91 +46,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.226" />
 
-    <TextView
-        android:id="@+id/ques1_result"
-        android:layout_width="126dp"
-        android:layout_height="25dp"
-        android:text="1. Question 1:"
-        android:textColor="#2699FB"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.419" />
-
-    <TextView
-        android:id="@+id/ques1_correctAns"
-        android:layout_width="256dp"
-        android:layout_height="27dp"
-        android:text="Correct Answer: 2. Option 2"
-        android:textColor="#317F39"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47" />
-
-    <TextView
-        android:id="@+id/ques1_givenAns"
-        android:layout_width="235dp"
-        android:layout_height="28dp"
-        android:text="Given Answer: 1. Option 1"
-        android:textColor="#FB2626"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.387"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.526" />
-
-    <TextView
-        android:id="@+id/wrongAnswer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wrong Answers:"
-        android:textColor="#2699FB"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.222"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.351" />
-
-    <TextView
-        android:id="@+id/ques2_correctAns"
-        android:layout_width="246dp"
-        android:layout_height="30dp"
-        android:text="Correct Answer: 3. Option 3"
-        android:textColor="#317F39"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.419"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
-
-    <TextView
-        android:id="@+id/ques2_result"
-        android:layout_width="123dp"
-        android:layout_height="25dp"
-        android:text="2. Question 2:"
-        android:textColor="#2699FB"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.192"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.58" />
-
     <Button
         android:id="@+id/proceedBtn"
         android:layout_width="265dp"
@@ -160,20 +75,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.949" />
-
-    <TextView
-        android:id="@+id/ques2_givenAns"
-        android:layout_width="229dp"
-        android:layout_height="31dp"
-        android:text="Given Answer: 4. Option 4"
-        android:textColor="#FB2626"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.36"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.697" />
 
     <Button
         android:id="@+id/MainMenu"
