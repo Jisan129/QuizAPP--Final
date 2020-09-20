@@ -43,6 +43,7 @@ public class Quiz_options extends AppCompatActivity {
     public static String[] rightOption;
     public static String[] question;
     public static String[] answers;
+    //public static String[] userAnswer;
     public static int count = 100;
 
     DatabaseReference QuizTable;
@@ -50,8 +51,8 @@ public class Quiz_options extends AppCompatActivity {
 
     FirebaseFirestore firebaseFirestore;
     CollectionReference reference = FirebaseFirestore.getInstance().collection("Questions");
-    private RecyclerView queRecycler;
     private QueAdapter queAdapter;
+    private RecyclerView queRecycler;
 
     /*FirebaseDatabase database=FirebaseDatabase.getInstance();*/
     @Override
@@ -185,7 +186,7 @@ public class Quiz_options extends AppCompatActivity {
 
 
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < questions.size(); i++) {
             questions.add(new Question(question[i], i, rightOption[i], option1[i], option2[i], option3[i], option4[i]));
            // reference.document( i+"").set(question);
 
