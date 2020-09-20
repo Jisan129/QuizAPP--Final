@@ -42,7 +42,7 @@ public class Quiz_options extends AppCompatActivity {
     public static String[] option4;
     public static String[] rightOption;
     public static String[] question;
-    public static String[] answers;
+    public static String[] answers = new String[10];
     public static int count = 100;
 
     DatabaseReference QuizTable;
